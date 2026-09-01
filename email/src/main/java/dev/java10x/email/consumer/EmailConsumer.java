@@ -16,9 +16,4 @@ public class EmailConsumer {
         System.out.println(emailDto.emailTo());
     }
 
-    @Bean
-    public Jackson2JsonMessageConverter messageConverter(){
-        ObjectMapper objectMapper = new ObjectMapper();
-        return new Jackson2JsonMessageConverter(objectMapper);
-    }
 }

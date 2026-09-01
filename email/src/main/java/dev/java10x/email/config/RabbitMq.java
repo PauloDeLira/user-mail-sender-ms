@@ -13,4 +13,7 @@ public class RabbitMq {
     public Queue queue(){
         return new Queue(queueName, true);
     }
+
+
+
 }

@@ -1,8 +1,10 @@
 spring:
+  config:
+    import: optional:file:../.env[.properties]
   datasource:
-    url: jdbc:postgresql://localhost:5433/ms_email_ms
-    username: postgres
-    password: postgres
+    url: ${EMAIL_DB_URL}
+    username: ${EMAIL_DB_USERNAME}
+    password: ${EMAIL_DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
 
   jpa:
@@ -14,10 +16,10 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
 
   rabbitmq:
-    addresses: jaragua.lmq.cloudamqp.com
-    username: opabafvt
-    password: PILai-O_-a-z9-ZlsL3HH1g6JxzJX5E4
-    virtual-host: opabafvt
+    addresses: ${RABBITMQ_ADDRESSES}
+    username: ${RABBITMQ_USERNAME}
+    password: ${RABBITMQ_PASSWORD}
+    virtual-host: ${RABBITMQ_VIRTUAL_HOST}
 
 server:
   port: 8080
